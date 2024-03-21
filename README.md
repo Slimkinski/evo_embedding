@@ -7,4 +7,4 @@ The model architecture was modified to obtain DNA sequence embedding.
 
 Minor errors were corrected.
 
-Downlaod [model parameters](https://huggingface.co/togethercomputer/evo-1-131k-base/blob/main/pytorch_model.pt) from Hugging face  All other files are here. 
+Downlaod [model parameters](https://huggingface.co/togethercomputer/evo-1-131k-base/blob/main/pytorch_model.pt) from Hugging face.  All other files are here. 

@@ -7,23 +7,16 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-from .cache import InferenceParams, RecurrentInferenceParams
-from .engine import HyenaInferenceEngine
-from .layers import ParallelGatedMLP, RMSNorm, VocabParallelEmbedding
-from .utils import column_split, print_rank_0
+from cache import InferenceParams, RecurrentInferenceParams
+from engine import HyenaInferenceEngine
+from layers import ParallelGatedMLP, RMSNorm, VocabParallelEmbedding
+from utils import column_split, print_rank_0
 
-try:
-    from flash_attn.modules.mha import MHA
-except ImportError:
-    "flash_attn not installed"
-    
-try:
-    from .positional_embeddings import swap_mha_rope
-except ImportError:
-    "could not import swap_mha_rope from positional_embeddings.py"
+from flash_attn.modules.mha import MHA
+from positional_embeddings import swap_mha_rope
 
 # dummy import to force huggingface to bundle the tokenizer
-from .tokenizer import ByteTokenizer
+from tokenizer import ByteTokenizer
 
 
 class AttentionBlock(nn.Module):
